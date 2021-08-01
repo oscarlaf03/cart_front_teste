@@ -7,10 +7,8 @@
           ${{cartItem.price}} X {{cartItem.quantity}}
         </span>
 
-        <span>
-          <i class="fa fa-arrow-circle-up cart-item__modify" @click="addCartItem(cartItem)"></i>
-          <i class="fa fa-arrow-circle-down cart-item__modify" @click="removeCartItem(cartItem)"></i>
-        </span>
+          <a class="button is-rounded is-pulled-right" @click="removeCartItem(cartItem)">Remove One</a>
+          <a class="button is-rounded is-pulled-right" @click="addCartItem(cartItem)">Add one</a>
       </div>
 
     </div>
