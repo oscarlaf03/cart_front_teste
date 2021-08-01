@@ -14,6 +14,6 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-shadow': ['error', { builtinGlobals: false, hoist: 'functions', allow: ['state'] }],
-    'max-len': [2, { code: 160, tabWidth: 4, ignoreUrls: true }],
+    'max-len': [2, { code: 190, tabWidth: 4, ignoreUrls: true }],
   },
 };

@@ -19,26 +19,42 @@
       </div>
       <br>
     </ul>
-    <div class="buttons">
-    <button :disabled="!cartItems.length" class="button is-info">
-      Checkout (<span class="has-text-weight-bold">${{ cartTotal }}</span>)
-    </button>
 
- <button class="button is-danger is-outlined" @click="removeAllCartItems">
-    <span>Delete All items</span>
-    <span class="icon is-small">
-      <i class="fas fa-times"></i>
-    </span>
-  </button>
-       </div>
+    <form action="">
+      <div class="field">
+        <label class="label">Payment Info</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="C/C info" v-model="payment_info">
+        </div>
+      </div>
+
+    </form>
+
+    <div class="buttons">
+      <button :disabled="!cartItems.length || !payment_info.length" class="button is-info" @click="submitCart({items:cartItems, total:cartTotal, payment_info})">
+        Checkout (<span class="has-text-weight-bold">${{ cartTotal }}</span>)
+      </button>
+
+      <button class="button is-danger is-outlined" @click="removeAllCartItems">
+          <span>Delete All items</span>
+          <span class="icon is-small">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+    </div>
   </div>
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import CartListItem from './Cart_List_Item';
+import CartListItem from './Cart_List_Item.vue';
 
 export default {
   name: 'CartList',
+  data() {
+    return {
+      payment_info: '',
+    };
+  },
   components: {
     CartListItem,
   },
@@ -49,7 +65,7 @@ export default {
     this.$store.dispatch('getCartItems');
   },
   methods: {
-    ...mapActions(['removeAllCartItems']),
+    ...mapActions(['removeAllCartItems', 'submitCart']),
   },
 };
 </script>
