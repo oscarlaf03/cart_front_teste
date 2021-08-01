@@ -20,6 +20,9 @@
               <router-link to="/inventory" class="button is-primary">
                <strong> Inventory</strong>
               </router-link>
+              <router-link to="/orders" class="button is-primary">
+               <strong> See Orders</strong>
+              </router-link>
               <router-link to="/cart"  class="button is-warning">   <p>
     Total cart items:
     <span> {{cartQuantity}}</span> </p>

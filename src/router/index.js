@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import CartList from '../components/cart/Cart_List.vue';
 import ProductList from '../components/product/Product_List.vue';
+import OrderList from '../components/order/Order_List.vue';
 
 const routes = [
   {
@@ -14,6 +15,10 @@ const routes = [
   {
     path: '/',
     redirect: '/inventory',
+  },
+  {
+    path: '/orders',
+    component: OrderList,
   },
 ];
 
