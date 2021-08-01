@@ -23,7 +23,6 @@ const actions = {
   },
   removeCartItem({ commit }, cartItem) {
     axios.delete('/api/cart/delete/', { data: cartItem }).then((response) => {
-      console.log('\n\n**response.data on axios**\n\n', response.data);
       commit('UPDATE_CART_ITEMS', response.data);
     });
   },
