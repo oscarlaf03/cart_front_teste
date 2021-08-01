@@ -32,9 +32,14 @@ const actions = {
     });
   },
 
-  submitCart({ commit }, cartContent) {
+  submitCart({ commit, dispatch }, cartContent) {
     axios.post('/api/orders', cartContent).then((response) => {
-      console.log(commit, response);
+      console.log(commit, response, dispatch);
+      if (response.status === 200) {
+        dispatch('removeAllCartItems');
+      } else {
+        // TODO handle this
+      }
     });
   },
 };

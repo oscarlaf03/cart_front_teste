@@ -18,7 +18,7 @@
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/inventory" class="button is-primary">
-               <strong> Inventory</strong>
+               <strong> Buy Engines</strong>
               </router-link>
               <router-link to="/orders" class="button is-primary">
                <strong> See Orders</strong>
